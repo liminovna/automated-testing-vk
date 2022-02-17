@@ -10,7 +10,8 @@ class TestTuple:
     # parametrized test
     @pytest.mark.parametrize("tuple,first_item", [
         (("apple", "banana", "cherry"), "apple"),
-        ((1, 2, 3, 4, 5), 1),
+        ((0, 1, 2, 3, 4, 5), 0),
+        ((str, float), str)
 
     ])
     def test_first_item(self, tuple, first_item):
