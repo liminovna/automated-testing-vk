@@ -5,7 +5,6 @@ class TestTuple:
 
     def test_tuple_len(self):
         assert len(("apple", "banana", "cherry")) == 3
-        assert len((1, 2, 3, 4, 5)) == 5
 
     # parametrized test
     @pytest.mark.parametrize("tuple,first_item", [
@@ -23,17 +22,14 @@ class TestTuple:
 
 class TestInt:
 
-    def test_to_string(self):
-        assert str(2) == '2'
-
-    def test_addition(self):
-        assert 5+10==15
+    def test_abs_value(self):
+        assert abs(-1) == 1
 
     def test_float_to_int(self):
-        assert int(4.8)==4
-        assert int(-1)==-1
-        assert int('2')==2
-        
+        assert int(5.8)==5
+
+    def test_str_to_int(self):
+        assert int('2')==2        
         # valid test which throws an error
         try:
             assert int('apple')
