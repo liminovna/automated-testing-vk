@@ -5,6 +5,7 @@ class TestTuple:
 
     def test_tuple_len(self):
         assert len(("apple", "banana", "cherry")) == 3
+        assert len(tuple()) == 0
 
     def test_first_item(self):
         assert ("apple", "banana", "cherry")[0]=="apple"
@@ -19,7 +20,7 @@ class TestInt:
     @pytest.mark.parametrize("num,bool", [
         (-1, True),
         (1, True),
-        (0, True),
+        (0, True),  
         (2.4, False),
         (-2.4, False),
 
