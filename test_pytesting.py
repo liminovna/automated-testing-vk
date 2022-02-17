@@ -22,8 +22,8 @@ class TestTuple:
 
 class TestInt:
 
-    def test_abs_value(self):
-        assert abs(-1) == 1
+    def test_abs_val(self):
+        assert abs(-1)==1
 
     def test_float_to_int(self):
         assert int(5.8)==5
