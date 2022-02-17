@@ -18,6 +18,7 @@ class TestInt:
     # parametrized test
     @pytest.mark.parametrize("num,bool", [
         (-1, True),
+        (1, True),
         (0, True),
         (2.4, False),
         (-2.4, False),
