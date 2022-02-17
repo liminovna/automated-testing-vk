@@ -6,15 +6,8 @@ class TestTuple:
     def test_tuple_len(self):
         assert len(("apple", "banana", "cherry")) == 3
 
-    # parametrized test
-    @pytest.mark.parametrize("tuple,first_item", [
-        (("apple", "banana", "cherry"), "apple"),
-        ((0, 1, 2, 3, 4, 5), 0),
-        ((str, float), str)
-
-    ])
-    def test_first_item(self, tuple, first_item):
-        assert tuple[0]==first_item
+    def test_first_item(self):
+        assert ("apple", "banana", "cherry")[0]=="apple"
 
     def test_one_item_tuple(self):
         assert isinstance(('apple',), tuple)
@@ -22,8 +15,16 @@ class TestTuple:
 
 class TestInt:
 
-    def test_abs_val(self):
-        assert abs(-1)==1
+    # parametrized test
+    @pytest.mark.parametrize("num,bool", [
+        (-1, True),
+        (0, True),
+        (2.4, False),
+        (-2.4, False),
+
+    ])
+    def test_is_int(self, num, bool):
+        assert isinstance(num, int) is bool
 
     def test_float_to_int(self):
         assert int(5.8)==5
